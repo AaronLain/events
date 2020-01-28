@@ -107,21 +107,39 @@ const printToDom = (divId, textToPrint) => {
 
 const pieBuilder = (pieArray) => {
     let domString = '';
-    pieArray.forEach(pie => {
+    for(let i = 0; i < pieArray.length; i++){
         domString += `<div class="pies">`;
-        domString +=   `<header class="cardhead"><h2>${pie.name}</h2></header>`;
-        domString +=   `<img src=${pie.imageUrl} alt="A lovely picture of ${pie.name}">`;
-        domString +=   `<p class="drink-pairing"><em>Drink Pairing:</em> ${pie.drinkPairing}</p>`;;
-        domString +=   `<p class="crust"><em>Crust Type:</em> ${pie.crust}</p>`;
-        domString +=   `<p class="crust"><em>Price:</em> $${pie.price}</p>`;
-        domString +=   `<p class="ice-cream"><em>Ice Cream:</em> ${pie.iceCream}</p>`;;
-        domString +=   `<p class="instructor"><em>Instigator:</em> ${pie.instructor}</p>`;
-        domString +=    `<footer class=${pie.isWarm}><h3>Pie is warm: ${pie.isWarm}</h3></footer>`;
+        domString +=   `<header class="cardhead"><h2>${pieArray[i].name}</h2></header>`;
+        domString +=   `<img src=${pieArray[i].imageUrl} alt="A lovely picture of ${pieArray[i].name}">`;
+        domString +=   `<p class="drink-pairing"><em>Drink Pairing:</em> ${pieArray[i].drinkPairing}</p>`;;
+        domString +=   `<p class="crust"><em>Crust Type:</em> ${pieArray[i].crust}</p>`;
+        domString +=   `<p class="crust"><em>Price:</em> $${pieArray[i].price}</p>`;
+        domString +=   `<p class="ice-cream"><em>Ice Cream:</em> ${pieArray[i].iceCream}</p>`;;
+        domString +=   `<p class="instructor"><em>Instigator:</em> ${pieArray[i].instructor}</p>`;
+        domString +=    `<footer class=${pieArray[i].isWarm}><h3>Pie is warm: ${pieArray[i].isWarm}</h3></footer>`;
         domString += '</div>';  
     
-    });
+    };
     printToDom("pie-list", domString);
 };
 
+const findMyPies = (e) => {
+    const buttonId = e.target.id;
+    const myPies = [];
+    console.log(e.target.id)
+    for(let i = 0; i < pies.length; i++){
+        if (pies[i].instructor === buttonId){
+            myPies.push(pies[i]);
+        } 
+        }
+    }
+    pieBuilder(myPies);
+}
 
 pieBuilder(pies);
+
+document.getElementById('Zoe').addEventListener('click', findMyPies);
+document.getElementById('Luke').addEventListener('click', findMyPies);
+document.getElementById('Mary').addEventListener('click', findMyPies);
+document.getElementById('Aaron').addEventListener('click', findMyPies);
+document.getElementById('All').addEventListener('click', findMyPies);
