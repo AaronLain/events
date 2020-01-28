@@ -1,8 +1,68 @@
 body {
     background-color: darkred;
+    font-family: 'Oswald', sans-serif;
 }
 
 h1 {
     text-align: center;
     font-size: 400%;
+}
+
+.pie-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.pies {
+    text-align: center;
+    height: 35em;
+    width: 20em;
+    flex: 0 1 28%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-content: center;
+    margin: 2em;
+    border-radius: 3em;
+    background-color: rgb(247, 232, 173);
+}
+
+.show {
+    display: flex;
+}
+.pies p {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 130%;
+
+}
+.pies img {
+    height: 45%;
+    width: 96%;
+    margin: .5em;
+    align-self: center;
+}
+
+.cardhead {
+    background-color: white;
+    color: darkred;
+    height: 4em;
+    text-align: center;
+    justify-content: center;
+    border-top-left-radius: 3em;
+    border-top-right-radius: 3em;
+}
+
+footer.true {
+    background-color: firebrick;
+}
+
+footer.false {
+    background-color: lightseagreen;
+}
+
+footer {
+    border-bottom-left-radius: 3em;
+    border-bottom-right-radius: 3em;
 }
